@@ -21,11 +21,16 @@
             pkgs.pnpm
           ];
 
-          shellHook = ''
-            echo "⚡️ Central Node environment loaded!"
-            echo "Node: $(node --version)"
-            echo "pnpm: $(pnpm --version)"
-          '';
+          shellHook = "";
+
+          # shellHook = ''
+          #   if [ -z "$_NIX_SHELL_LOADED" ]; then
+          #     export _NIX_SHELL_LOADED=1
+          #     echo "⚡️ Central Node environment loaded!" >&2
+          #     echo "Node: $(node --version)" >&2
+          #     echo "pnpm: $(pnpm --version)" >&2
+          #   fi
+          # '';
         };
       }
     );
